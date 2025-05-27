@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проектная практика</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5f7;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Шапка */
+        header {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255, 105, 140, 0.3);
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .university-logo {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 90px;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        /* Навигация */
+        nav {
+            background-color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: #ff758c;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #ffebee;
+            color: #ff3d6d;
+        }
+        
+        /* Основной контент */
+        main {
+            padding: 40px 0;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(255, 105, 140, 0.1);
+            border: 1px solid #ffecef;
+        }
+        
+        h2 {
+            color: #ff3d6d;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 24px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            border-radius: 3px;
+        }
+        
+        /* Секция "Обо мне" */
+        .about-me {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-me-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 5px solid #ff7eb3;
+            box-shadow: 0 5px 15px rgba(255, 105, 140, 0.2);
+        }
+        
+        .about-me-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* Секция команды */
+        .team-list {
+            columns: 2;
+            column-gap: 30px;
+        }
+        
+        .team-list ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            break-inside: avoid;
+        }
+        
+        /* Секция отчетов */
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .report-card {
+            background: #fff9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ff7eb3;
+            transition: transform 0.3s;
+        }
+        
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 105, 140, 0.15);
+        }
+        
+        .report-title {
+            color: #ff3d6d;
+            margin-top: 0;
+        }
+        
+        .report-date {
+            color: #ff7eb3;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        /* Подвал */
+        footer {
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .about-me {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .about-me-photo {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .university-logo {
+                position: static;
+                transform: none;
+                margin-top: 10px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .team-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Проектная практика</h1>
+                <img src="https://tgfu.uz/wp-content/uploads/2023/03/partner-logo-1.png" alt="Московский Политех" class="university-logo">
+            </div>
+        </div>
+    </header>
+    
+    <!-- Навигация -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about-me">Обо мне</a></li>
+                <li><a href="#about">О проекте</a></li>
+                <li><a href="#team">Команда</a></li>
+                <li><a href="#journal">Прогресс</a></li>
+                <li><a href="#reports">Отчеты</a></li>
+                <li><a href="#resources">Ресурсы</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Обо мне -->
+        <section id="about-me">
+            <h2>Обо мне</h2>
+            <div class="about-me">
+                <img src="https://sun9-38.userapi.com/impg/4HDD98zOMw7KbPCFy6maBHVWjE3FMj-uCriuCA/VwmzuNqAPc8.jpg?size=2560x1920&quality=95&sign=8fe1cac46ed7978a746084f7b2c20557&type=album" alt="Мое фото" class="about-me-photo">
+                <div class="about-me-text">
+                    <h3>Кленечева Анастасия Владимировна</h3>
+                    <p><strong>Студентка 1 курса Московского политехнического университета</strong></p>
+                    <p>Обучаюсь на факультете "Информационные технологии", мое направление - "Системная и программная инженерия".</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- О проекте -->
+        <section id="about">
+            <h2>О проекте</h2>
+            <p>Этот проект создан в рамках дисциплины "Проектная деятельность". Он направлен на разработку игры.</p>
+            <p>Она поможет организовать учебный процесс и сделать обучение более эффективным.</p>
+        </section>
+        
+        <!-- Команда -->
+        <section id="team">
+            <h2>Наша команда</h2>
+            <div class="team-list">
+                <ul>
+                    <li>Ахатова Алина</li>
+                    <li>Базякин Илья</li>
+                    <li>Балаева Анастасия</li>
+                    <li>Блинова Татьяна</li>
+                    <li>Вавилова Анастасия</li>
+                    <li>Васильева Дарья</li>
+                    <li>Друзягин Александр</li>
+                    <li>Дунаева Ева</li>
+                    <li>Зайцев Богдан</li>
+                    <li>Кадочникова Анна</li>
+                    <li>Кленечева Анастасия</li>
+                    <li>Клещева Светлана</li>
+                    <li>Коростылева Виктория</li>
+                    <li>Косова Карина</li>
+                    <li>Лаптева Олеся</li>
+                    <li>Леонтьева Виктория</li>
+                    <li>Махмудов Абубакр</li>
+                    <li>Муняков Никита</li>
+                    <li>Орлова София</li>
+                    <li>Перевалова София</li>
+                    <li>Пичугин Фёдор</li>
+                    <li>Родионова Дарья</li>
+                    <li>Самбуу Дугар</li>
+                    <li>Семенцов Даниил</li>
+                    <li>Стругова Полина</li>
+                    <li>Сухарев Артём</li>
+                    <li>Сухотерина Александра</li>
+                    <li>Тиссен Дарья</li>
+                    <li>Хамматов Камил</li>
+                    <li>Чубарова Анна</li>
+                    <li>Швецов Иван</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Журнал прогресса -->
+        <section id="journal">
+            <h2>Наш прогресс</h2>
+            <div style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px dashed #ffb6c1;">
+                <h3>Старт проекта</h3>
+                <p style="color: #ff7eb3; font-size:14px;">3 февраля 2025</p>
+                <p>Состоялось первое собрание команды: обсуждение идеи и распределение ролей.</p>
+        </section>
+        
+        <!-- Отчеты -->
+        <section id="reports">
+            <h2>Отчеты</h2>
+            <div class="reports-grid">
+                <div class="report-card">
+                    <h3 class="report-title">Экскурсия в "Первый Бит"</h3>
+                    <div class="report-date">27 мая 2025</div>
+                    <p>ЗАПОЛНИТЬ!</p>
+                    <a href="ССЫЛКА!!!" style="color: #ff3d6d; text-decoration:none;">Читать →</a>
+                </div>
+                <div class="report-card">
+                    <h3 class="report-title">Фестиваль 8БИТ</h3>
+                    <div class="report-date">10-12 апреля 2025</div>
+                    <p>ЗАПОЛНИТЬ!</p>
+                    <a href="ССЫЛКА!!!" style="color: #ff3d6d; text-decoration:none;">Читать →</a>
+                </div>
+                <div class="report-card">
+                    <h3 class="report-title">Карьерный марафон</h3>
+                    <div class="report-date">22 апреля 2025</div>
+                    <p>ЗАПОЛНИТЬ!</p>
+                    <a href="ССЫЛКА!!!" style="color: #ff3d6d; text-decoration:none;">Читать →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ресурсы -->
+        <section id="resources">
+            <h2>Полезные материалы</h2>
+            <ul style="list-style-type:none; padding:0;">
+                <li style="margin-bottom:10px; padding:10px; background:#fff9fa; border-radius:5px;">
+                    <a href="ВСТАВКА ССЫЛКИ!!!" style="color:#ff3d6d;">....</a>
+                </li>
+                <li style="margin-bottom:10px; padding:10px; background:#fff9fa; border-radius:5px;">
+                    <a href="ВСТАВКА ССЫЛКИ!!!!" style="color:#ff3d6d;">....</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p>Учебный проект по Проектной деятельности</p>
+            <p>Московский Политех, 2023</p>
+        </div>
+    </footer>
+</body>
+</html>
