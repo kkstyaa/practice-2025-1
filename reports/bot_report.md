@@ -9,5 +9,6 @@
 * pyTelegramBotAPI
 * requests
 * python-dotenv  
+
 Сделала я это в терминале с помощью pip install.
 
