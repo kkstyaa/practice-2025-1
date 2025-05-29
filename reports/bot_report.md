@@ -8,6 +8,6 @@
 Для корректной работы бота я установила следующие библиотеки: 
 * pyTelegramBotAPI
 * requests
-* python-dotenv
+* python-dotenv  
 Сделала я это в терминале с помощью pip install.
 
